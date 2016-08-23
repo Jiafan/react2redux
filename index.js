@@ -7,6 +7,13 @@ import App from './containers/app.js';
 import rootReducer from './reducers';
 
 let store = createStore(rootReducer);
-let root = document.getElementById('root')
+let root = document.getElementById('root');
 
-ReactDom.render(<App />,root);
+let container = (
+  <Provider store={store} key='provider'>
+    <App />
+  </Provider>
+);
+
+
+ReactDom.render(container,root);
